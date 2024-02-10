@@ -34,14 +34,14 @@ export default function PlayerName(player: Player) {
         <img
           className={styles.icon}
           src="/images/patronHeart.webp"
-          title="I am a patron of Talishar!"
+          title="I am a patron of Clarent!"
         />
       ) : null}
       {isContributor ? (
         <img
           className={styles.icon}
           src="/images/copper.webp"
-          title="I am a contributor to Talishar!"
+          title="I am a contributor to Clarent!"
         />
       ) : null}
       {isPvtVoidPatron ? (

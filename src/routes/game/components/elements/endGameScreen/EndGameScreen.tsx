@@ -42,7 +42,7 @@ const EndGameScreen = () => {
       content = <div className={fullLogClasses} dangerouslySetInnerHTML={{ __html: data.fullLog }} />;
     }
     else {
-      content = <div>Support our <a href='https://www.patreon.com/talishar' target='_blank'>patreon</a> to access this feature.</div>;
+      content = <div>Support our <a href='https://www.patreon.com/clarent' target='_blank'>patreon</a> to access this feature.</div>;
     }
   } else {
     content = <EndGameStats {...(data as EndGameData)} />;

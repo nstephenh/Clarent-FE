@@ -296,7 +296,7 @@ const Lobby = () => {
                   Note that new cards are added on a 'best-effort' basis and
                   there may be more bugs and/or other innacurate card
                   interactions than usual, since there are no official release
-                  notes from Legend Story Studios yet.
+                  notes from Weebs of the Shore yet.
                 </p>
                 <div className={styles.disclaimerButtons}>
                 <button
@@ -520,7 +520,7 @@ const Lobby = () => {
           }
           
           {isPatron != "1" && isWideScreen &&
-            <div className={styles.patreonLink}>Support our <a href='https://www.patreon.com/talishar' target='_blank'>patreon</a> to use dynamic hypergeometric calculator!</div>
+            <div className={styles.patreonLink}>Support our <a href='https://www.patreon.com/clarent' target='_blank'>patreon</a> to use dynamic hypergeometric calculator!</div>
           }
             
       <div className={styles.spacer}></div>

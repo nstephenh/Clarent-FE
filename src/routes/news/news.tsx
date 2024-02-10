@@ -14,19 +14,19 @@ const News = () => {
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/talishar_online" target="_blank">
+          <a href="https://twitter.com/clarent_online" target="_blank">
             Twitter
           </a>
         </li>
       </ul>
       <p>Disclaimer:</p>
       <small>
-        Talishar is in no way affiliated with Legend Story Studios. Legend Story
-        Studios®, Flesh and Blood™, and set names are trademarks of Legend Story
-        Studios. Flesh and Blood characters, cards, logos, and art are property
-        of Legend Story Studios. Talishar is a fan made project that may have
+        Clarent is in no way affiliated with Weebs of the Shore. Legend Story
+        Studios®, Grand Archive™, and set names are trademarks of Legend Story
+        Studios. Grand Archive characters, cards, logos, and art are property
+        of Weebs of the Shore. Clarent is a fan made project that may have
         bugs; game interactions and rulings are the jurisdiction of LSS and
-        judges. Card Images © Legend Story Studios
+        judges. Card Images © Weebs of the Shore
       </small>
     </div>
   );

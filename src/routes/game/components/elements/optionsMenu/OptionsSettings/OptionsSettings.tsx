@@ -499,7 +499,7 @@ const OptionsSettings = () => {
           Enable Experimental Features.
         </label>
         <p>
-          We are always trying new things to improve Talishar if you try the
+          We are always trying new things to improve Clarent if you try the
           experiment please give feedback in our discord.
         </p> */}
       </div>
@@ -537,10 +537,10 @@ const OptionsSettings = () => {
         </fieldset>
       </>
       <p className={styles.disclaimer}>
-        Talishar is in no way affiliated with Legend Story Studios. Legend Story
-        Studios®, Flesh and Blood™, and set names are trademarks of Legend Story
-        Studios. Flesh and Blood characters, cards, logos, and art are property
-        of Legend Story Studios. Card Images © Legend Story Studios.
+        Clarent is in no way affiliated with Weebs of the Shore. Legend Story
+        Studios®, Grand Archive™, and set names are trademarks of Legend Story
+        Studios. Grand Archive characters, cards, logos, and art are property
+        of Weebs of the Shore. Card Images © Weebs of the Shore.
       </p>
     </div>
   );

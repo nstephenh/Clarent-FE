@@ -68,7 +68,7 @@ export const ForgottenPasswordForm = () => {
           <label htmlFor="email">Email</label>
           <input
             type="email"
-            placeholder="bravo@talishar.net"
+            placeholder="bravo@clarent.net"
             {...register('email')}
             aria-invalid={errors.email?.message ? 'true' : undefined}
           />

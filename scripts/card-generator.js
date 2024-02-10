@@ -1,8 +1,7 @@
 const axios = require('axios');
 const fs = require('fs');
 
-const url =
-  'https://raw.githubusercontent.com/the-fab-cube/flesh-and-blood-cards/heavy-hitters/json/english/card.json';
+const url = ''; // TODO: Redo this script
 const outputFile = 'src/constants/cardList.ts';
 
 axios

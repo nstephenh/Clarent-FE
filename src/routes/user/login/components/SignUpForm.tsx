@@ -81,7 +81,7 @@ export const SignUpForm = () => {
           <label htmlFor="email">Email</label>
           <input
             type="email"
-            placeholder="bravo@talishar.net"
+            placeholder="bravo@clarent.net"
             {...register('email')}
             aria-invalid={errors.email?.message ? 'true' : undefined}
           />
@@ -121,7 +121,7 @@ export const SignUpForm = () => {
               onClick={() => setDisclaimerOpen(true)}
               className={styles.link}
             >
-              Talishar is not a judge.
+              Clarent is not a judge.
             </span>
           </label>
           {errors.agreeToTerms?.message && (
@@ -166,8 +166,8 @@ export const SignUpForm = () => {
             Disclaimer
           </header>
           <p>
-            Welcome to Talishar, a fan-made website where you can play the
-            trading card game Flesh & Blood by Legend Story Studios in your
+            Welcome to Clarent, a fan-made website where you can play the
+            trading card game Grand Archive by Weebs of the Shore in your
             browser! We want to make sure you have a fun and enjoyable
             experience playing the game online.
           </p>
@@ -175,33 +175,33 @@ export const SignUpForm = () => {
             Please be aware that, while we strive to provide an accurate and
             enjoyable gaming experience, there may be bugs or errors in the
             software that could impact the game's accuracy and functionality.
-            Therefore, it's important to note that Talishar has no
+            Therefore, it's important to note that Clarent has no
             responsibility and no warranty for the accuracy of the game rules on
             our website. It's always a good idea to familiarize yourself with
-            the official rules and regulations of Flesh & Blood before playing
-            on Talishar.
+            the official rules and regulations of Grand Archive before playing
+            on Clarent.
           </p>
           <p>
             It's also important to note that, if you're playing in a paper
-            event, you should not use "it works that way on Talishar" as an
+            event, you should not use "it works that way on Clarent" as an
             excuse if you're caught performing an illegal move, missing
             triggers, or doing something out of order. The ultimate
             responsibility for knowing the rules of the game lies with the
             player themselves, not the software. The ultimate authority on the
-            rules of Flesh & Blood is Legend Story Studios and their judges.
+            rules of Grand Archive is Weebs of the Shore and their judges.
           </p>
           <p>
-            At Talishar, we're open source, which means we welcome contributions
+            At Clarent, we're open source, which means we welcome contributions
             and bug reports to help us improve the website. If you're interested
             in contributing, please visit our GitHub page. We appreciate all
             feedback and suggestions for improvement.
           </p>
           <p>
             By accessing and using our website, you agree to this disclaimer and
-            assume all risks associated with using Talishar. We reserve the
+            assume all risks associated with using Clarent. We reserve the
             right to modify or terminate our services at any time without prior
             notice. If you have any questions or concerns, feel free to reach
-            out to us on our discord. Thanks for playing on Talishar!
+            out to us on our discord. Thanks for playing on Clarent!
           </p>
           <hr />
           <button

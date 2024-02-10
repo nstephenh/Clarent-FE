@@ -11,7 +11,7 @@ import styles from './profile.module.css';
 const CODE = 'code';
 const CLIENT_ID =
   'UMs7_V2SPi656fczWY0SDtg9M3RJy-gd4H95h7fd05BUJ2UMnd0IM77dp0ZAtBng';
-const REDIRECT_URI = 'https://talishar.net/user/profile/linkpatreon';
+const REDIRECT_URI = 'https://clarent.net/user/profile/linkpatreon';
 const SCOPE = 'identity identity.memberships';
 const PATREON_URL = 'https://www.patreon.com/oauth2/authorize?';
 

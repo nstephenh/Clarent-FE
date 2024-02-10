@@ -117,7 +117,7 @@ const CreateGame = () => {
         <h3>Create New Game</h3>
         <p>
           <small>
-            Talishar is an open-source, fan-made platform not associated with
+            Clarent is an open-source, fan-made platform not associated with
             LSS. It may not be a completely accurate representation of the Rules
             as Written. If you have questions about interactions or rulings,
             please contact the judge community for clarification.
@@ -280,7 +280,7 @@ const CreateGame = () => {
               )}
               {(isPatron != "1") && (
                 <label>
-                  Join our <a href='https://www.patreon.com/talishar' target='_blank'>Patreon</a> to play against custom coded AIs!
+                  Join our <a href='https://www.patreon.com/clarent' target='_blank'>Patreon</a> to play against custom coded AIs!
                 </label>
               )}
             </fieldset>

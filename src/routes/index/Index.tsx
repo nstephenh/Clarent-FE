@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import CreateGame from '../game/create/CreateGame';
 import GameList from './components/gameList';
 import styles from './Index.module.css';
-import TalisharLogo from '../../img/TalisharLogo.webp';
+import ClarentLogo from '../../img/ClarentLogo.webp';
 import News from 'routes/news';
 import DevTool from './components/devTool';
 
@@ -31,7 +31,7 @@ const Index = () => {
           <CreateGame />
         </div>
         <article className={styles.newsContainer}>
-          <img src={TalisharLogo} className={styles.logo} />
+          <img src={ClarentLogo} className={styles.logo} />
           <News />
         </article>
       </div>

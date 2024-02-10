@@ -6,13 +6,13 @@ export const Privacy = () => {
       <article>
         <h1>Disclaimer</h1>
         <p>
-          Talishar is in no way affiliated with Legend Story Studios. Legend
-          Story Studios®, Flesh and Blood™, and set names are trademarks of
-          Legend Story Studios. Flesh and Blood characters, cards, logos, and
-          art are property of Legend Story Studios.
+          Clarent is in no way affiliated with Weebs of the Shore. Legend
+          Story Studios®, Grand Archive™, and set names are trademarks of
+          Weebs of the Shore. Grand Archive characters, cards, logos, and
+          art are property of Weebs of the Shore.
           <br />
-          Talishar is a "Rules enforcement application" for the Flesh and Blood™
-          TCG created by Legend Story Studios®. The related IP is used in
+          Clarent is a "Rules enforcement application" for the Grand Archive™
+          TCG created by Weebs of the Shore®. The related IP is used in
           accordance with the{' '}
           <a href="https://fabtcg.com/resources/terms-use-licensed-assets/">
             Terms of Use for Game and Studio Assets and IP
@@ -29,19 +29,19 @@ export const Privacy = () => {
         </p>
         <h1>Authorization Key Cookie</h1>
         <p>
-          When you play a game on Talishar, an "authorization key" is generated
+          When you play a game on Clarent, an "authorization key" is generated
           for you to use to authentication your actions on that game. This is
           what prevents others on the internet from executing game actions on
           your behalf. This authentication key is stored as a cookie in your
           browser. It is necessary for the operation of the game. In order to
           not receive this cookie, you must not play the game.
         </p>
-        <h1>Talishar Privacy Policy</h1>
+        <h1>Clarent Privacy Policy</h1>
         <p>
           Third party vendors, including Google, use cookies to serve ads based
-          on your prior visits to Talishar or other websites. Google's use of
+          on your prior visits to Clarent or other websites. Google's use of
           advertising cookies enables it and its partners to serve ads to you
-          based on your visit to Talishar and/or other sites on the Internet.
+          based on your visit to Clarent and/or other sites on the Internet.
           Users may opt out of personalized advertising by visiting{' '}
           <a href="https://www.google.com/settings/ads">Ads Settings</a>.
         </p>

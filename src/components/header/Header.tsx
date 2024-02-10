@@ -2,7 +2,7 @@ import useAuth from 'hooks/useAuth';
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import styles from './Header.module.scss';
-import TalisharLogo from '../../img/CoinLogo.png';
+import ClarentLogo from '../../img/CoinLogo.png';
 import {
   BsGithub,
   BsPersonFill,
@@ -28,14 +28,14 @@ const Header = () => {
           <li>
             <Link to="/" className={styles.logo}>
               <img
-                src={TalisharLogo}
-                alt={'Logo Talishar - link to homepage'}
+                src={ClarentLogo}
+                alt={'Logo Clarent - link to homepage'}
               />
             </Link>
           </li>
           <li>
             <a
-              href="https://linktr.ee/Talishar"
+              href="https://linktr.ee/Clarent"
               target={'_blank'}
               className={styles.social}
               title={'Patreon Link'}
@@ -47,7 +47,7 @@ const Header = () => {
         <ul>
           <li>
             <a
-              href="https://github.com/Talishar/Talishar"
+              href="https://github.com/Clarent/Clarent"
               target={'_blank'}
               className={styles.social}
               title={'Github Link'}
@@ -67,7 +67,7 @@ const Header = () => {
           </li>
           <li>
             <a
-              href="https://twitter.com/talishar_online"
+              href="https://twitter.com/clarent_online"
               target={'_blank'}
               className={styles.social}
               title={'Twitter Link'}
@@ -76,7 +76,7 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a href="https://beta.talishar.net/game/Roguelike/CreateGame.php">
+            <a href="https://beta.clarent.net/game/Roguelike/CreateGame.php">
               <GiTreasureMap></GiTreasureMap> <span>RogueLike</span>
             </a>
           </li>

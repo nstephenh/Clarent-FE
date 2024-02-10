@@ -26,7 +26,7 @@ const OptionsContent = () => {
   const navigate = useNavigate();
   const [allowSpectator, setAllowSpectator] = useState(false);
 
-  const gameURL = `http://fe.talishar.net/game/play/${gameID}`;
+  const gameURL = `http://fe.clarent.net/game/play/${gameID}`;
 
   const clickCloseOptionsHandler = () => {
     dispatch(closeOptionsMenu());
@@ -41,7 +41,7 @@ const OptionsContent = () => {
   const clickPlayLegacyHandler = async (e: React.MouseEvent) => {
     e.preventDefault;
     await screenfull.exit();
-    window.location.href = `https://legacy.talishar.net/game/NextTurn4.php?gameName=${gameID}&playerID=${playerID}`;
+    window.location.href = `https://legacy.clarent.net/game/NextTurn4.php?gameName=${gameID}&playerID=${playerID}`;
   };
 
   // going to main menu means you concede the game
@@ -111,7 +111,7 @@ const OptionsContent = () => {
         <h3>Navigation</h3>
         <div className={styles.buttonColumn}>
           <button className={styles.buttonDiv} onClick={clickPlayLegacyHandler}>
-            Legacy Talishar Client
+            Legacy Clarent Client
           </button>
           <button
             className={styles.buttonDiv}
