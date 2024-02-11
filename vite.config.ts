@@ -16,7 +16,7 @@ export default ({ mode }) => {
     : '8080';
   const devDirectory = !!process.env.VITE_BACKEND_DIRECTORY
     ? process.env.VITE_BACKEND_DIRECTORY
-    : 'game';
+    : 'GrandArchiveOnline';
 
   return defineConfig({
     base: './',
