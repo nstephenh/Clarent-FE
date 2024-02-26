@@ -6,7 +6,7 @@ import styles from './Deck.module.css';
 import CardPopUp from 'routes/game/components/elements/cardPopUp/CardPopUp';
 
 type DeckProps = {
-  deck: String[];
+  deck: string[];
 };
 
 const Deck = ({ deck }: DeckProps) => {
@@ -19,9 +19,9 @@ const Deck = ({ deck }: DeckProps) => {
           <div key={`deck${ix}`} className={styles.deckCardContainer}>
             <label>
               <Field type="checkbox" name="deck" value={`${card}`} />
-              <CardPopUp cardNumber={card.substring(0, 6)}>
+              <CardPopUp cardNumber={card.split("-")[0]}>
                 <CardImage
-                  src={`/cardsquares/${card.substring(0, 6)}.webp`}
+                  src={`/cardsquares/${card.split("-")[0]}.webp`}
                   draggable={false}
                   className={styles.card}
                 />
