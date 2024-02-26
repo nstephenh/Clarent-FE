@@ -8,23 +8,9 @@
   "deck": {
     "hero": "UNKNOWNHERO",
     "heroName": "",
-    "weapons": [],
-    "head": [],
-    "chest": [],
-    "arms": [],
-    "legs": [],
-    "offhand": [],
+    "material": [],
+    "materialSB": [],
     "cards": [],
-    "headSB": [],
-    "chestSB": [],
-    "armsSB": [],
-    "legsSB": [],
-    "offhandSB": [],
-    "weaponSB": [],
-    "cardsSB": [],
-    "quiver": [],
-    "quiverSB": [],
-    "hands": [],
-    "handsSB": []
+    "cardsSB": []
   }
 }

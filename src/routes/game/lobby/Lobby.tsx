@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Deck from './components/deck/Deck';
 import LobbyChat from './components/lobbyChat/LobbyChat';
 import Calculator from './components/calculator/Calculator';
@@ -6,10 +6,10 @@ import testData from './mockdata.json';
 import styles from './Lobby.module.css';
 import Equipment from './components/equipment/Equipment';
 import classNames from 'classnames';
-import { FaExclamationCircle } from 'react-icons/fa';
-import { GiCapeArmor } from "react-icons/gi";
-import { SiBookstack } from "react-icons/si";
-import { Form, Formik } from 'formik';
+import {FaExclamationCircle} from 'react-icons/fa';
+import {GiCapeArmor} from "react-icons/gi";
+import {SiBookstack} from "react-icons/si";
+import {Form, Formik} from 'formik';
 import deckValidation from './validation';
 import StickyFooter from './components/stickyFooter/StickyFooter';
 import {
@@ -17,25 +17,25 @@ import {
   useSubmitSideboardMutation,
   useSubmitLobbyInputMutation
 } from 'features/api/apiSlice';
-import { useAppSelector } from 'app/Hooks';
-import { shallowEqual } from 'react-redux';
-import { RootState } from 'app/Store';
-import { DeckResponse, Weapon } from 'interface/API/GetLobbyInfo.php';
+import {useAppSelector} from 'app/Hooks';
+import {shallowEqual} from 'react-redux';
+import {RootState} from 'app/Store';
+import {DeckResponse} from 'interface/API/GetLobbyInfo.php';
 import LobbyUpdateHandler from './components/updateHandler/SideboardUpdateHandler';
-import { GAME_FORMAT, BREAKPOINT_EXTRA_LARGE } from 'appConstants';
+import {GAME_FORMAT, BREAKPOINT_EXTRA_LARGE} from 'appConstants';
 import ChooseFirstTurn from './components/chooseFirstTurn/ChooseFirstTurn';
 import useWindowDimensions from 'hooks/useWindowDimensions';
-import { SubmitSideboardAPI } from 'interface/API/SubmitSideboard.php';
-import { useNavigate } from 'react-router-dom';
+import {SubmitSideboardAPI} from 'interface/API/SubmitSideboard.php';
+import {useNavigate} from 'react-router-dom';
 import CardPortal from '../components/elements/cardPortal/CardPortal';
 import Matchups from './components/matchups/Matchups';
-import { GameLocationState } from 'interface/GameLocationState';
+import {GameLocationState} from 'interface/GameLocationState';
 import CardPopUp from '../components/elements/cardPopUp/CardPopUp';
-import { getGameInfo } from 'features/game/GameSlice';
+import {getGameInfo} from 'features/game/GameSlice';
 import useSound from 'use-sound';
 import playerJoined from 'sounds/playerJoinedSound.mp3';
-import { createPortal } from 'react-dom';
-import { useAppDispatch } from 'app/Hooks';
+import {createPortal} from 'react-dom';
+import {useAppDispatch} from 'app/Hooks';
 import useAuth from 'hooks/useAuth';
 
 const Lobby = () => {
@@ -46,7 +46,7 @@ const Lobby = () => {
   const [isWideScreen, setIsWideScreen] = useState<boolean>(false);
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const { playerID, gameID, authKey } = useAppSelector(
+  const {playerID, gameID, authKey} = useAppSelector(
     getGameInfo,
     shallowEqual
   );
@@ -55,10 +55,10 @@ const Lobby = () => {
     (state: RootState) => state.game.gameLobby,
     shallowEqual
   );
-  const [playLobbyJoin] = useSound(playerJoined, { volume: 1 });
-  const { isPatron } = useAuth();
+  const [playLobbyJoin] = useSound(playerJoined, {volume: 1});
+  const {isPatron} = useAuth();
 
-  let { data, isLoading, refetch } = useGetLobbyInfoQuery({
+  let {data, isLoading, refetch} = useGetLobbyInfoQuery({
     gameName: gameID,
     playerID: playerID,
     authKey: authKey
@@ -114,7 +114,7 @@ const Lobby = () => {
       gameName: String(gameID)
     };
     navigate(`/game/play/${gameID}`, {
-      state: { playerID: playerID ?? 0 } as GameLocationState
+      state: {playerID: playerID ?? 0} as GameLocationState
     });
   }
 
@@ -132,10 +132,10 @@ const Lobby = () => {
     gameLobby?.theirHero === 'CardBack' ? 'UNKNOWNHERO' : gameLobby?.theirHero
   }_cropped.png)`;
 
-  const eqClasses = classNames({ secondary: activeTab !== 'equipment' });
-  const deckClasses = classNames({ secondary: activeTab !== 'deck' });
-  const chatClasses = classNames({ secondary: activeTab !== 'chat' });
-  const matchupClasses = classNames({ secondary: activeTab !== 'matchups' });
+  const eqClasses = classNames({secondary: activeTab !== 'equipment'});
+  const deckClasses = classNames({secondary: activeTab !== 'deck'});
+  const chatClasses = classNames({secondary: activeTab !== 'chat'});
+  const matchupClasses = classNames({secondary: activeTab !== 'matchups'});
   const leaveClasses = classNames('secondary outline');
 
   const handleLeave = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -166,27 +166,6 @@ const Lobby = () => {
       break;
     default:
   }
-
-  const weaponsIndexed = [...data.deck.hands].map((card, ix) => {
-    return {
-      id: `${card.id}-${ix}`,
-      is1H: card.is1H,
-      img: `${card.id}`,
-      numHands: card.numHands ?? (card.is1H ? 1 : 2)
-    } as Weapon;
-  });
-
-  const weaponsSBIndexed = [
-    ...data.deck.handsSB,
-    { id: `NONE00`, is1H: true, img: `NONE00`, numHands: 2 }
-  ].map((card, ix) => {
-    return {
-      id: `${card.id}-${ix + weaponsIndexed.length}`,
-      img: `${card.id}`,
-      is1H: card.is1H,
-      numHands: card.numHands ?? (card.is1H ? 1 : 2)
-    } as Weapon;
-  });
 
   const mainClassNames = classNames(styles.lobbyClass);
 
@@ -219,37 +198,20 @@ const Lobby = () => {
   const handleFormSubmission = async (values: DeckResponse) => {
     setIsSubmitting(true);
 
-    const hands = values.weapons.map((item) => item.id.substring(0, 6));
-    const deck = values.deck.map((card) => card.substring(0, 6));
+    const selectedMaterial = values.material.map((card) => card);
+    const selectedDeck = values.deck.map((card) => card);
     const inventory = [
-      ...weaponsIndexed
-        .concat(weaponsSBIndexed)
-        .map((item) => item.id.substring(0, 6))
-        .filter((item) => !hands.includes(item) && item !== 'NONE00'),
-      ...(data?.deck?.head ?? [])
-        .concat(data?.deck?.headSB ?? [])
-        .filter((item) => !values.head.includes(item) && item !== 'NONE00'),
-      ...(data?.deck?.chest ?? [])
-        .concat(data?.deck?.chestSB ?? [])
-        .filter((item) => !values.chest.includes(item) && item !== 'NONE00'),
-      ...(data?.deck?.arms ?? [])
-        .concat(data?.deck?.armsSB ?? [])
-        .filter((item) => !values.arms.includes(item) && item !== 'NONE00'),
-      ...(data?.deck?.legs ?? [])
-        .concat(data?.deck?.legsSB ?? [])
-        .filter((item) => !values.legs.includes(item) && item !== 'NONE00'),
+      ...(data?.deck?.material ?? [])
+        .concat(data?.deck?.materialSB ?? [])
+        .filter((card) => !selectedMaterial.includes(card) && card !== 'NONE00'),
       ...(data?.deck?.demiHero ?? [])
     ];
 
     // encode it as an object
     const submitDeck = {
       hero: data?.deck.hero,
-      hands,
-      head: values.head,
-      chest: values.chest,
-      arms: values.arms,
-      legs: values.legs,
-      deck,
+      selectedMaterial,
+      selectedDeck,
       inventory
     };
     const requestBody: SubmitSideboardAPI = {
@@ -289,48 +251,44 @@ const Lobby = () => {
           <>
             <dialog open={needToDoDisclaimer}>
               <article className={styles.disclaimerArticles}>
-                <header style={{ marginBottom: '1em' }}>
-                ⚠️ Open Format Disclaimer
+                <header style={{marginBottom: '1em'}}>
+                  ⚠️ Open Format Disclaimer
                 </header>
-                <p style={{ marginBottom: '1em' }}>
+                <p style={{marginBottom: '1em'}}>
                   Note that new cards are added on a 'best-effort' basis and
                   there may be more bugs and/or other innacurate card
                   interactions than usual, since there are no official release
                   notes from Weebs of the Shore yet.
                 </p>
                 <div className={styles.disclaimerButtons}>
-                <button
-                  onClick={() => {
-                    setAcceptedDisclaimer(true);
-                  }}
-                >
-                  I Accept!
-                </button>
+                  <button
+                    onClick={() => {
+                      setAcceptedDisclaimer(true);
+                    }}
+                  >
+                    I Accept!
+                  </button>
                 </div>
                 <div className={styles.disclaimerButtons}>
-                <button
-                  onClick={() => {
-                    navigate('/');
-                  }}
-                  className="outline"
-                >
-                  No Thanks!
-                </button>
+                  <button
+                    onClick={() => {
+                      navigate('/');
+                    }}
+                    className="outline"
+                  >
+                    No Thanks!
+                  </button>
                 </div>
               </article>
             </dialog>
           </>,
           document.body
         )}
-      <LobbyUpdateHandler isSubmitting={isSubmitting} />
+      <LobbyUpdateHandler isSubmitting={isSubmitting}/>
       <Formik
         initialValues={{
           deck: deckIndexed,
-          weapons: weaponsIndexed,
-          head: [...data.deck.head, ...data.deck.headSB, 'NONE00'][0],
-          chest: [...data.deck.chest, ...data.deck.chestSB, 'NONE00'][0],
-          arms: [...data.deck.arms, ...data.deck.armsSB, 'NONE00'][0],
-          legs: [...data.deck.legs, ...data.deck.legsSB, 'NONE00'][0]
+          material: [...data.deck.material]
         }}
         onSubmit={handleFormSubmission}
         validationSchema={deckValidation(deckSize, maxDeckSize)}
@@ -345,7 +303,7 @@ const Lobby = () => {
               >
                 <div
                   className={styles.leftCol}
-                  style={{ backgroundImage: leftPic }}
+                  style={{backgroundImage: leftPic}}
                 >
                   <div className={styles.dimPic}>
                     <h3 aria-busy={isLoading}>{data.displayName.substring(0, 14)}</h3>
@@ -359,7 +317,7 @@ const Lobby = () => {
               >
                 <div
                   className={styles.rightCol}
-                  style={{ backgroundImage: rightPic }}
+                  style={{backgroundImage: rightPic}}
                 >
                   <div className={styles.dimPic}>
                     <h3 aria-busy={!gameLobby?.theirName}>
@@ -375,93 +333,93 @@ const Lobby = () => {
               </CardPopUp>
             </div>
             {gameLobby?.amIChoosingFirstPlayer && !needToDoDisclaimer
-              ? createPortal(<ChooseFirstTurn />, document.body)
+              ? createPortal(<ChooseFirstTurn/>, document.body)
               : !isWideScreen && (
-                  <nav className={styles.mobileNav}>
-                    <ul>
-                      {!isWideScreen && (
-                        <li>
-                          <button
-                            className={leaveClasses}
-                            onClick={handleLeave}
-                            type="button"
-                          >
-                            Leave
-                          </button>
-                        </li>
+              <nav className={styles.mobileNav}>
+                <ul>
+                  {!isWideScreen && (
+                    <li>
+                      <button
+                        className={leaveClasses}
+                        onClick={handleLeave}
+                        type="button"
+                      >
+                        Leave
+                      </button>
+                    </li>
+                  )}
+                </ul>
+                <ul>
+                  {gameLobby?.matchups != undefined &&
+                    gameLobby?.matchups?.length > 0 && (
+                      <li>
+                        <button
+                          className={matchupClasses}
+                          onClick={handleMatchupClick}
+                          type="button"
+                        >
+                          Matchups
+                        </button>
+                      </li>
+                    )}
+                  <li>
+                    <button
+                      className={eqClasses}
+                      onClick={handleEquipmentClick}
+                      type="button"
+                    >
+                      <div
+                        className={styles.icon}>
+                        <GiCapeArmor/>
+                      </div>
+                      Material
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className={deckClasses}
+                      onClick={handleDeckClick}
+                      type="button"
+                    >
+                      <div
+                        className={styles.icon}>
+                        <SiBookstack/>
+                      </div>
+                      Deck
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className={chatClasses}
+                      onClick={handleChatClick}
+                      type="button"
+                    >
+                      {unreadChat && (
+                        <>
+                          <FaExclamationCircle/>{' '}
+                        </>
                       )}
-                    </ul>
-                    <ul>
-                      {gameLobby?.matchups != undefined &&
-                        gameLobby?.matchups?.length > 0 && (
-                          <li>
-                            <button
-                              className={matchupClasses}
-                              onClick={handleMatchupClick}
-                              type="button"
-                            >
-                              Matchups
-                            </button>
-                          </li>
-                        )}
-                      <li>
-                        <button
-                          className={eqClasses}
-                          onClick={handleEquipmentClick}
-                          type="button"
-                        >
-                          <div 
-                            className={styles.icon}>
-                            <GiCapeArmor/>
-                          </div>
-                          Equipment
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          className={deckClasses}
-                          onClick={handleDeckClick}
-                          type="button"
-                        >
-                        <div 
-                          className={styles.icon}>
-                          <SiBookstack/>
-                        </div>
-                        Deck
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          className={chatClasses}
-                          onClick={handleChatClick}
-                          type="button"
-                        >
-                          {unreadChat && (
-                            <>
-                              <FaExclamationCircle />{' '}
-                            </>
-                          )}
-                          Chat
-                        </button>
-                      </li>
-                    </ul>
-                  </nav>
-                )}
+                      Chat
+                    </button>
+                  </li>
+                </ul>
+              </nav>
+            )}
             {isWideScreen ? (
               <div className={styles.deckSelectorContainer}>
                 <nav className={styles.inLineNav}>
                   <ul>
                     <li>
                       <button
-                        className= {eqClasses}
+                        className={eqClasses}
                         onClick={handleEquipmentClick}
                         type="button"
-                      >        
-                          <div 
-                            className={styles.icon}>
-                            <GiCapeArmor/>
-                          </div>
-                          Equipment
+                      >
+                        <div
+                          className={styles.icon}>
+                          <GiCapeArmor/>
+                        </div>
+                        Material
                       </button>
                     </li>
                     <li>
@@ -470,7 +428,7 @@ const Lobby = () => {
                         onClick={handleDeckClick}
                         type="button"
                       >
-                        <div 
+                        <div
                           className={styles.icon}>
                           <SiBookstack/>
                         </div>
@@ -482,12 +440,12 @@ const Lobby = () => {
                 {activeTab !== 'deck' && (
                   <Equipment
                     lobbyInfo={data}
-                    weapons={weaponsIndexed}
-                    weaponSB={weaponsSBIndexed}
+                    material={[...data.deck.material]}
+                    materialSB={[...data.deck.materialSB]}
                   />
                 )}
                 {activeTab === 'deck' && (
-                  <Deck deck={[...deckIndexed, ...deckSBIndexed]} />
+                  <Deck deck={[...deckIndexed, ...deckSBIndexed]}/>
                 )}
               </div>
             ) : (
@@ -495,38 +453,40 @@ const Lobby = () => {
                 {activeTab === 'equipment' && (
                   <Equipment
                     lobbyInfo={data}
-                    weapons={weaponsIndexed}
-                    weaponSB={weaponsSBIndexed}
+                    material={[...data.deck.material]}
+                    materialSB={[...data.deck.materialSB]}
                   />
                 )}
                 {activeTab === 'deck' && (
-                  <Deck deck={[...deckIndexed, ...deckSBIndexed]} />
+                  <Deck deck={[...deckIndexed, ...deckSBIndexed]}/>
                 )}
               </>
             )}
-          {(activeTab === 'chat' || isWideScreen) && showCalculator && <Calculator />}
-          {(activeTab === 'chat' || isWideScreen) && !showCalculator && <LobbyChat />}
+            {(activeTab === 'chat' || isWideScreen) && showCalculator && <Calculator/>}
+            {(activeTab === 'chat' || isWideScreen) && !showCalculator && <LobbyChat/>}
 
-          {isPatron == "1" && isWideScreen &&
-            <button
-              className={styles.smallButton}
-              onClick={(e) => {
-                e.preventDefault();
-                toggleShowCalculator();
-              }}
-              disabled={false} >
-              Calculator
-            </button>
-          }
-          
-          {isPatron != "1" && isWideScreen &&
-            <div className={styles.patreonLink}>Support our <a href='https://www.patreon.com/clarent' target='_blank'>patreon</a> to use dynamic hypergeometric calculator!</div>
-          }
-            
-      <div className={styles.spacer}></div>
+            {isPatron == "1" && isWideScreen &&
+              <button
+                className={styles.smallButton}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleShowCalculator();
+                }}
+                disabled={false}>
+                Calculator
+              </button>
+            }
+
+            {isPatron != "1" && isWideScreen &&
+              <div className={styles.patreonLink}>Support our <a href='https://www.patreon.com/clarent'
+                                                                 target='_blank'>patreon</a> to use dynamic
+                hypergeometric calculator!</div>
+            }
+
+            <div className={styles.spacer}></div>
 
             {(activeTab === 'matchups' || isWideScreen) && (
-              <Matchups refetch={refetch} />
+              <Matchups refetch={refetch}/>
             )}
             {!gameLobby?.amIChoosingFirstPlayer ? (
               <StickyFooter
@@ -539,7 +499,7 @@ const Lobby = () => {
           </div>
         </Form>
       </Formik>
-      <CardPortal />
+      <CardPortal/>
     </main>
   );
 };
